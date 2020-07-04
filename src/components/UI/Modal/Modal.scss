@@ -1,0 +1,30 @@
+.modal {
+    position: fixed;
+    background-color: white;
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    width: 30%;
+    height: 80vh;
+    top:10%;
+    left: 35%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    display: inline-block;
+    border-radius: 0.5rem;
+    overflow: auto;
+}
+
+@media (max-width:1200px) {
+    .modal {
+        width: 50%;
+        left: 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 60%;
+        left: 20%;
+    }
+}

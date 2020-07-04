@@ -1,6 +1,5 @@
 .explore {
     width: 100%;
-
     &__card {
         display: flex;
         flex-direction: column;
@@ -19,6 +18,7 @@
         h3 {
             font-size: 1.6rem;
             font-weight: bold;
+            text-align: center;
         }
 
         p {
@@ -27,18 +27,35 @@
             text-align: center;
 
         }
-        button {
+        &--btn {
             width: 100%;
             padding: 1rem;
             background-color: var(--color-primary-normal);
             color: white;
             font-size: 1.5rem;
             border: none;
+            z-index: 500;
 
             &:hover {
                 background-color: var(--color-primary-dark);
             }
         }
 
+    }
+
+    &__btn {
+        width: 95%;
+        padding: 2rem;
+        background-color: #ccc;
+        color: black;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border: none;
+        z-index: 500;
+        margin: 4rem auto;
+
+        &:hover {
+            background-color: var(--color-primary-light);
+        }
     }
 }

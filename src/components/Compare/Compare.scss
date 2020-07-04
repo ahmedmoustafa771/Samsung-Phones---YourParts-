@@ -1,7 +1,10 @@
 .compare {
     width:70%;
     margin: 0 auto;
-
+    z-index: 500;
+    @media(max-width:992px) {
+        width:90%;
+    }
     &__column {
         width: 100%;
         padding-top: 2rem;
@@ -19,17 +22,26 @@
     &__search {
         width: 80%;
         padding: 1rem 2rem;
+        z-index: 500;
+        @media(max-width:992px) {
+            width:95%;
+        }
     }
 
     img {
         width: 80%;
         height: 30rem;
         margin-bottom: 2rem;
+        cursor: pointer;
+        z-index: 500;
     }
 
     h2 {
         font-size: 1.6rem;
         font-weight: bold;
         margin-bottom: 2rem;
+        cursor: pointer;
+        z-index: 500;
     }
 }
+    
