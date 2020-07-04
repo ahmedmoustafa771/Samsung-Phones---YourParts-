@@ -1,0 +1,35 @@
+.compare {
+    width:70%;
+    margin: 0 auto;
+
+    &__column {
+        width: 100%;
+        padding-top: 2rem;
+        border-top: 4px solid var(--color-primary-normal);
+        border-bottom: 4px solid var(--color-primary-normal);
+        border-left: 2px solid var(--color-primary-normal);
+        border-right: 2px solid var(--color-primary-normal);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__search {
+        width: 80%;
+        padding: 1rem 2rem;
+    }
+
+    img {
+        width: 80%;
+        height: 30rem;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+}

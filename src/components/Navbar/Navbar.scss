@@ -1,0 +1,49 @@
+.navbar {
+    width:100%;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    &__logo {
+        height: 5rem;
+    }
+
+    .navbar-nav {
+        font-size: 1.8rem;
+        margin-left: 2rem;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        color: white;
+        margin: 0 1rem;
+
+        &:hover {
+            color: var(--color-primary-light);
+        }
+    }
+
+    .bg-dark {
+        background-color: transparent !important;
+        background-image: linear-gradient(to right bottom, var(--color-primary-dark),  var(--color-primary-normal) ) !important;
+    }
+
+    .dropdown-menu {
+        left: 20%;
+    }
+
+    .MuiTypography-body1 {
+        font-size: 1.5rem !important;
+        font-family: 'Lato', sans-serif;
+    }
+
+    button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        margin-left: 2rem;
+         
+        &:hover {
+            color: var(--color-primary-light);
+        }
+    }
+}
