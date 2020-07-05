@@ -5,6 +5,13 @@
     align-items: center;
     justify-content: center;
     
+    &__icon {
+        align-self: flex-end;
+        margin: 1rem;
+        cursor: pointer;
+        font-size: 2.5rem !important;
+        color: var(--color-primary-normal) !important;
+    }
 
     img {
         width: 100%;

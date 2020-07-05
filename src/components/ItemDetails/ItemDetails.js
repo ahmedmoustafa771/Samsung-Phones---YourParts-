@@ -2,6 +2,7 @@ import React from 'react';
 import './ItemDetails.scss';
 import { connect } from 'react-redux';
 
+import CancelIcon from '@material-ui/icons/Cancel';
 import Modal from '../UI/Modal/Modal';
 import FeatureCard from '../UI/FeatureCard/FeatureCard';
 import phoneImg from '../../assets/my-galaxy-a70-a705-sm-a705fzbgxme-frontblue-190346866.jpg';
@@ -31,6 +32,7 @@ const ItemDetails = props => {
     return (
         <Modal show={props.show} modalClosed={() => props.onClickBackdrop()}>
             <div className="ItemDetails">
+                <CancelIcon className="ItemDetails__icon" onClick={() => props.onClickBackdrop()}/>
                 <img src={phoneImg} alt="phone"/>
                 <h2 >{props.selectedPhone}</h2>
                 {features}
