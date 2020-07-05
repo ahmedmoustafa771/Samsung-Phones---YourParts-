@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Explore.scss';
 import { Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
