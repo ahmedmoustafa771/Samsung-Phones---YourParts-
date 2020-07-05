@@ -15,6 +15,13 @@ export const fetchPhonesSuccess = (phonesArray, numberOfProducts) => {
     };
 };
 
+export const fetchPhonesFail = (error) => {
+    return {
+        type: actionTypes.FETCH_PHONES_FAIL,
+        error: error,
+    };
+};
+
 export const fetchPhones = (numberOfProducts) => {
     return dispatch => {
         dispatch(fetchPhonesStart());
@@ -23,7 +30,7 @@ export const fetchPhones = (numberOfProducts) => {
             dispatch(fetchPhonesSuccess(res.data, numberOfProducts));
         })
         .catch(err => {
-            console.log(err);
+            dispatch(fetchPhonesFail(err.message));
         });
     };
 };
@@ -47,6 +54,13 @@ export const fetchAllPhonesSuccess = (AllPhonesArray) => {
     };
 };
 
+export const fetchAllPhonesFail = (error) => {
+    return {
+        type: actionTypes.FETCH_ALL_PHONES_FAIL,
+        error: error,
+    };
+};
+
 export const fetchAllPhones = () => {
     return dispatch => {
         dispatch(fetchAllPhonesStart());
@@ -55,7 +69,14 @@ export const fetchAllPhones = () => {
             dispatch(fetchAllPhonesSuccess(res.data));
         })
         .catch(err => {
-            console.log(err);
+            dispatch(fetchAllPhonesFail(err.message));
         });
+    };
+};
+
+export const changeSettingsState = (autoGenerateState) => {
+    return {
+        type: actionTypes.CHANGING_SETTINGS_STATE,
+        autoGenerateState: autoGenerateState,
     };
 };

@@ -6,5 +6,6 @@ export {
 export {
     fetchPhones,
     fetchPhonesIncrease,
-    fetchAllPhones
+    fetchAllPhones,
+    changeSettingsState
 } from './phones';

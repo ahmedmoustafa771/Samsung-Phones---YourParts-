@@ -31,6 +31,10 @@ function App(props) {
       style={{position:"absolute",top:"50vh", left:"49vw"}}  />
   }
 
+  if ( props.error ) {
+    routes = <div style={{fontSize:"5rem",textAlign:"center", padding:"20rem"}}>{props.error}</div>
+  }
+
   return (
     <Container fluid="true" style={{position:"relative"}}>
       <Navbar />
@@ -43,7 +47,8 @@ function App(props) {
 const mapStateToProps = state => {
   return {
       loading: state.phones.loading,
-      numberOfProducts: state.phones.numberOfProducts
+      numberOfProducts: state.phones.numberOfProducts,
+      error: state.phones.error
   };
 };
 

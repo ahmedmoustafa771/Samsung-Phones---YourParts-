@@ -4,8 +4,10 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import {NavLink} from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import logo from '../../assets/logo.png';
+import * as actions from '../../store/actions/index';
 
 const navbar = props => {
     const [state, setState] = React.useState({
@@ -14,9 +16,9 @@ const navbar = props => {
       });
     
       const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
+        setState({ ...state, checkedB: !state.checkedB });
       };
-
+    props.onChangingSettingsState(state.checkedB);
     return (
     <div className="navbar">
         <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
@@ -30,17 +32,17 @@ const navbar = props => {
                 <NavLink to="/compare" className="navbar__link nav-link">Compare</NavLink>
                 <NavDropdown title="Settings" id="collasible-nav-dropdown">
                     <NavDropdown.Item>
-                        <FormControlLabel
-                            control={
-                            <Switch
-                                checked={state.checkedB}
-                                onChange={handleChange}
-                                name="checkedB"
-                                color="primary"
-                            />
-                            }
-                            label="Auto Generate"
+                    <FormControlLabel
+                        control={
+                        <Switch
+                            checked={state.checkedB}
+                            onClick={handleChange}
+                            name="checkedB"
+                            color="primary"
                         />
+                        }
+                        label="Auto Generate Devices"
+                    />
                     </NavDropdown.Item>
                 </NavDropdown>
                 </Nav>
@@ -50,4 +52,10 @@ const navbar = props => {
     );
 };
 
-export default navbar;
+const mapDispatchToProps = dispatch => {
+    return {
+        onChangingSettingsState: (checkedB) => dispatch(actions.changeSettingsState(checkedB)),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(navbar);
